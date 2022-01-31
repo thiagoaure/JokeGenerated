@@ -2,7 +2,14 @@ import React, {useState} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import {useNavigation} from '@react-navigation/native';
-import {Text, Button, SafeAreaView, StyleSheet} from 'react-native';
+import {
+  Text,
+  Button,
+  SafeAreaView,
+  StyleSheet,
+  Image,
+  View,
+} from 'react-native';
 
 const App = () => {
   const [data, setData] = useState(' ');
@@ -23,6 +30,10 @@ const App = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+      <Image
+        style={styles.imagesDefault}
+        source={require('../../assets/img1.png')}
+      />
       <Text style={styles.mainText}>Gerador de Piadas do Chuck Norris</Text>
       <Button onPress={storeJokes} title="Gerar Piada" />
     </SafeAreaView>
@@ -38,6 +49,12 @@ const styles = StyleSheet.create({
   },
   mainText: {
     alignSelf: 'center',
-    fontSize: 15,
+    fontSize: 20,
+  },
+  imagesDefault: {
+    width: 320,
+    height: 400,
+    alignSelf: 'center',
+    margin: 15,
   },
 });
