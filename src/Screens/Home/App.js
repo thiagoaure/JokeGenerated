@@ -8,7 +8,7 @@ import {
   SafeAreaView,
   StyleSheet,
   Image,
-  View,
+  TouchableOpacity,
 } from 'react-native';
 
 const App = () => {
@@ -35,7 +35,9 @@ const App = () => {
         source={require('../../assets/img1.png')}
       />
       <Text style={styles.mainText}>Gerador de Piadas do Chuck Norris</Text>
-      <Button onPress={storeJokes} title="Gerar Piada" />
+      <TouchableOpacity style={styles.appButton} onPress={storeJokes}>
+        <Text style={styles.appButtonText}>Gerar Piada</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
@@ -50,11 +52,26 @@ const styles = StyleSheet.create({
   mainText: {
     alignSelf: 'center',
     fontSize: 20,
+    marginTop: 20,
   },
   imagesDefault: {
     width: 320,
     height: 400,
     alignSelf: 'center',
     margin: 15,
+  },
+  appButton: {
+    backgroundColor: 'pink',
+    height: 40,
+    width: 160,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+    margin: 15,
+    borderRadius: 10,
+  },
+  appButtonText: {
+    fontSize: 20,
+    fontWeight: 'bold',
   },
 });

@@ -1,7 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useNavigation} from '@react-navigation/native';
-import {Text, Button, SafeAreaView, StyleSheet} from 'react-native';
+import {
+  Text,
+  Button,
+  SafeAreaView,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
 
 const JokeGenerated = () => {
   const [joke, setJoke] = useState('');
@@ -27,10 +33,9 @@ const JokeGenerated = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.mainText}>{joke}</Text>
-      <Button
-        title="Voltar e gerar outra piada"
-        onPress={() => navigation.navigate('Home')}
-      />
+      <TouchableOpacity style={styles.appButton} onPress={() => navigation.navigate('Home')}>
+        <Text style={styles.appButtonText}>Voltar e gerar outra piada</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
@@ -47,5 +52,19 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     padding: 10,
+  },
+  appButton: {
+    backgroundColor: 'pink',
+    height: 40,
+    width: 350,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+    margin: 15,
+    borderRadius: 10,
+  },
+  appButtonText: {
+    fontSize: 20,
+    fontWeight: 'bold',
   },
 });
