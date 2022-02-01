@@ -4,7 +4,6 @@ import axios from 'axios';
 import {useNavigation} from '@react-navigation/native';
 import {
   Text,
-  Button,
   SafeAreaView,
   StyleSheet,
   Image,
@@ -13,7 +12,7 @@ import {
 
 const App = () => {
   const [data, setData] = useState(' ');
-  const navigation = useNavigation();
+  const navigation: any = useNavigation();
 
   const storeJokes = () => {
     axios.get('https://api.chucknorris.io/jokes/random').then(response => {
@@ -32,7 +31,7 @@ const App = () => {
     <SafeAreaView style={styles.container}>
       <Image
         style={styles.imagesDefault}
-        source={require('../../assets/img1.png')}
+        source={require('../../Assets/img1.png')}
       />
       <Text style={styles.mainText}>Gerador de Piadas do Chuck Norris</Text>
       <TouchableOpacity style={styles.appButton} onPress={storeJokes}>

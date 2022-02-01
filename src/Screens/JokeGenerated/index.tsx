@@ -1,17 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useNavigation} from '@react-navigation/native';
-import {
-  Text,
-  Button,
-  SafeAreaView,
-  StyleSheet,
-  TouchableOpacity,
-} from 'react-native';
+import {Text, SafeAreaView, StyleSheet, TouchableOpacity} from 'react-native';
 
 const JokeGenerated = () => {
   const [joke, setJoke] = useState('');
-  const navigation = useNavigation();
+  const navigation: any = useNavigation();
 
   const getJoke = async () => {
     try {
@@ -33,7 +27,9 @@ const JokeGenerated = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.mainText}>{joke}</Text>
-      <TouchableOpacity style={styles.appButton} onPress={() => navigation.navigate('Home')}>
+      <TouchableOpacity
+        style={styles.appButton}
+        onPress={() => navigation.navigate('Home')}>
         <Text style={styles.appButtonText}>Voltar e gerar outra piada</Text>
       </TouchableOpacity>
     </SafeAreaView>
