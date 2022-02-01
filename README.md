@@ -5,7 +5,9 @@
 #### To clone and run: 
 #### git clone https://github.com/thiagoaure/JokeGenerated
 #### npm install
-#### npm run ios or npm run android 
+#### cd ios && pod install 
+#### cd ..
+#### npm run ios OR npm run android 
 
 
 
